@@ -1,0 +1,1218 @@
+body {
+  background-color: rgb(6, 4, 25);
+  overflow-x: hidden;
+  margin: 0; /* Remove default margin */
+  font-family: "Inter", sans-serif; /* Add font family */
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(6, 4, 25);
+  border-radius: 6px;
+}
+
+.navbar {
+  height: 3rem;
+  width: 100%;
+  background-color: rgb(6, 4, 25);
+  position: fixed;
+  top: 0;
+  z-index: 1000; /* Set a high z-index to keep it above other elements */
+}
+
+.contactme {
+  width: 8rem;
+  height: 2rem;
+  border-radius: 0.9375rem;
+  border: 3px solid #000;
+  background: #555;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  direction: ltr;
+  float: right;
+  position: relative;
+  right: 4rem;
+  transition: background-color 0.3s ease; /* Add transition for background color */
+}
+
+.contactme p {
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0; /* Remove default margin */
+  line-height: 2.25rem;
+  font-weight: 700;
+  transition: color 0.3s ease; /* Add transition for text color */
+}
+
+.contactme:hover {
+  background-color: rgb(228, 255, 196); /* Change background color on hover */
+}
+
+.contactme:hover p {
+  color: #4f4d4d; /* Change text color on hover */
+}
+
+.container {
+  display: flex;
+}
+
+.section {
+  width: 15rem;
+  height: 100vh;
+  background-color: #1c1b23;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  position: fixed;
+  margin-top: 3rem;
+}
+
+.section.show {
+  display: block;
+  z-index: 4; /* Show the section when it has the "show" class */
+  opacity: 0.978;
+  position: fixed;
+}
+
+/* Add any additional styles for the content inside the section */
+.section a {
+  color: #fff;
+  /* Add more styles as needed */
+}
+
+.info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 15rem;
+  padding-top: 3rem; /* Add padding-top to avoid content under the fixed navbar */
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 2;
+}
+
+.profile {
+  width: 100%;
+  height: 10rem;
+  background-color: rgb(6, 224, 148);
+  background-image: url(image/profile_background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 0.7rem;
+  left: 1rem;
+  /* backdrop-filter: blur(18px); */
+}
+
+.blur-overlay {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(18px);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.circle {
+  width: 7.5rem;
+  position: relative;
+  height: 7.5rem;
+  background-color: rgb(227, 255, 127);
+  border: 3px solid rgb(248, 248, 248);
+  border-radius: 50%;
+  top: 15px;
+  right: -3rem;
+  background-image: url(image/Rik.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 39px 1.5px gold;
+}
+.funname {
+  display: flex;
+}
+.name {
+  width: 27rem;
+  height: 2rem;
+  position: relative;
+  top: 3rem;
+  left: 4rem;
+}
+.name p {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.info-items-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: relative;
+  bottom: -4.24rem;
+}
+
+.info1,
+.info2,
+.info3,
+.info4 {
+  width: 22%;
+  height: 13rem;
+  background-color: rgba(155, 150, 150, 0.419);
+  border-radius: 12px;
+}
+
+.info1::after,
+.info2::after,
+.info3::after,
+.info4::after {
+  position: absolute;
+  content: "";
+  color: #fff;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.info1:hover::after,
+.info2:hover::after,
+.info3:hover::after,
+.info4:hover::after {
+  content: "Coming Soon";
+  opacity: 1; /* Show on hover */
+}
+
+.knowladge {
+  display: flex;
+  justify-content: space-between;
+  width: 73%;
+  position: relative;
+  bottom: -7.24rem;
+  right: 8rem;
+}
+
+.k1,
+.k2,
+.k3 {
+  width: 29%;
+  height: 23rem;
+  background-color: #1c1b23;
+  border-radius: 12px;
+}
+.k4 {
+  border-radius: 12px;
+  width: 22%;
+  height: 26rem;
+  background-color: #1c1b23;
+  position: relative;
+  left: 28rem;
+  bottom: 17rem;
+}
+
+a.flex {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* margin-top: 2rem; */
+  text-decoration: none;
+  color: #8b8a91;
+  font-family: Inter;
+  font-size: 15px;
+  transition: transform 0.5s ease-in-out;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  left: 1.3rem;
+}
+a.flex svg {
+  margin-right: 15px; /* Adjust the margin as needed */
+}
+
+a.flex:hover {
+  transform: scale(1.1);
+}
+
+.facebook {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1.4rem;
+  margin-top: 0.8rem;
+  transition: transform 0.5s ease-in-out;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.facebook:hover {
+  transform: scale(1.1);
+}
+
+.facebooklogo {
+  height: 24px;
+  width: 24px;
+  background-image: url(image/facebook.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Resume_logo {
+  height: 24px;
+  width: 24px;
+  background-image: url(image/curriculum-vitae.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Resume {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1.4rem;
+  margin-top: 0.8rem;
+  transition: transform 0.5s ease-in-out;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.Resume:hover {
+  transform: scale(1.1);
+}
+
+.About {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1.4rem;
+  margin-top: 0.8rem;
+  transition: transform 0.5s ease-in-out;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.About:hover {
+  transform: scale(1.1);
+}
+
+.aboutlogo {
+  height: 24px;
+  width: 24px;
+  background-image: url(image/profile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: contrast(0.7);
+}
+.About p {
+  text-decoration: none;
+  color: #8b8a91;
+  font-family: Inter;
+  font-size: 15px;
+  margin-left: 0.7rem;
+}
+
+.facebook p {
+  text-decoration: none;
+  color: #8b8a91;
+  font-family: Inter;
+  font-size: 15px;
+  margin-left: 0.7rem;
+}
+.Resume p {
+  text-decoration: none;
+  color: #8b8a91;
+  font-family: Inter;
+  font-size: 15px;
+  margin-left: 0.7rem;
+}
+.social p {
+  color: #8b8a91;
+  font-family: Inter;
+  font-size: 15px;
+  line-height: 2.25rem;
+  font-weight: 700;
+  position: relative;
+  left: 1rem;
+}
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.aboutme {
+  width: 80%;
+  height: 36rem;
+  background-color: rgb(64, 71, 98);
+  display: flex;
+  position: relative;
+  left: 16rem;
+  top: -14rem;
+  color: white;
+  border: 4px solid white;
+  border-radius: 18px;
+
+  box-shadow: 0px 0px 24px 1px gold;
+}
+.photocopy {
+  width: 70rem;
+  height: 100%;
+  background-color: wheat;
+  background-image: url(image/Rik_profile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+}
+
+.text {
+  width: 76%;
+  height: 13rem;
+  position: relative;
+  top: 3rem;
+  left: 2rem;
+}
+.text p {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: white;
+
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.mycontent {
+  position: relative;
+  /* background-color: aquamarine; */
+  width: 80%; /* Adjust the width as needed */
+  margin: 2rem; /* Center the content */
+}
+
+.about-info {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: white;
+}
+ul {
+  list-style: none;
+}
+
+.about-info {
+  list-style: none;
+  padding: 0;
+}
+
+li.d-flex {
+  display: flex;
+  /* justify-content: space-evenly; */
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+li.d-flex span {
+  /* flex: 1; This ensures equal space between spans */
+  /* margin-left: 3rem; */
+}
+.sid {
+  margin-left: 5.5rem;
+}
+.may {
+  margin-left: 3rem;
+}
+.mail {
+  margin-left: 5.7rem;
+}
+.call {
+  margin-left: 5rem;
+}
+.code {
+  margin-left: 4.5rem;
+}
+.add {
+  margin-left: 4.7rem;
+}
+
+.m1 {
+  width: 24px;
+  height: 24px;
+  background-image: url(image/brain.png);
+  background-size: cover;
+  position: relative;
+  left: 2rem;
+  top: 0.6rem;
+}
+.moreProject1 {
+  display: flex;
+}
+.m1name {
+  position: relative;
+  left: 2.8rem;
+  bottom: 0.9rem;
+  color: #8b8a91;
+  font-size: 1.2rem;
+}
+.m1name p {
+  font-size: 0.6rem;
+  position: relative;
+  bottom: 1.1rem;
+}
+@media screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactme {
+    float: right;
+    position: static;
+    right: auto;
+  }
+}
+
+body {
+  background-color: rgb(6, 4, 25);
+  overflow-x: hidden;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* ... (existing styles) ... */
+
+@media screen and (max-width: 780px) {
+  /* Adjustments for smaller screens */
+  .navbar {
+    height: 4rem; /* Increase height for better touch interaction */
+  }
+
+  .contactme {
+    width: 100%;
+    float: none;
+    right: 0;
+    margin-top: 1rem; /* Adjust margin-top for spacing */
+    visibility: hidden;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .section {
+    display: none;
+    /* Adjust other styles as needed for your mobile menu */
+  }
+
+  .section.show {
+    display: block;
+  }
+
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .info {
+    margin-left: 0;
+    padding-top: 1rem;
+  }
+
+  .name {
+    left: 0;
+  }
+
+  .knowladge {
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .k4 {
+    left: 0;
+    bottom: 0;
+  }
+
+  .info-items-container {
+    flex-direction: column; /* Change flex direction to column for smaller screens */
+    align-items: center; /* Center the items */
+  }
+
+  .info1,
+  .info2,
+  .info3,
+  .info4 {
+    width: 90%; /* Adjust the width as needed */
+    margin-bottom: 1rem; /* Add margin between the items */
+  }
+
+  /* Add styles to create two rows */
+  .info1,
+  .info2 {
+    margin-bottom: 0.5rem; /* Adjust margin between the items in the same row */
+  }
+  .knowladge {
+    flex-direction: column; /* Change flex direction to column for smaller screens */
+    align-items: center; /* Center the items */
+  }
+  .k1,
+  .k2,
+  .k3,
+  .k4 {
+    width: 90%; /* Adjust the width as needed */
+    margin-bottom: 1rem;
+    height: 12rem;
+  }
+  .k1 {
+    margin-top: 4.4rem;
+  }
+  .k4 {
+    height: 20rem;
+  }
+  .aboutme {
+    top: 2rem;
+    left: 3rem;
+    width: 88%;
+    height: 24rem;
+  }
+  .photocopy {
+    width: 54rem;
+  }
+  .text {
+    top: 0rem;
+  }
+  .text p {
+    font-size: small;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Adjust the number of lines you want to display */
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+  .about-info {
+    font-size: small;
+  }
+  .mycontent {
+    left: 2rem;
+    bottom: 9rem;
+  }
+  .name p {
+    margin-left: 4.56rem;
+  }
+  .profile {
+    top: 2.9rem;
+  }
+}
+
+/* ... (existing styles) ... */
+body {
+  background-color: rgb(6, 4, 25);
+  overflow-x: hidden;
+  margin: 0; /* Remove default margin */
+  font-family: "Inter", sans-serif; /* Add font family */
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(6, 4, 25);
+  border-radius: 6px;
+}
+
+.navbar {
+  height: 3rem;
+  width: 100%;
+  background-color: rgb(6, 4, 25);
+  position: fixed;
+  top: 0;
+  z-index: 1000; /* Set a high z-index to keep it above other elements */
+}
+
+.contactme {
+  width: 8rem;
+  height: 2rem;
+  border-radius: 0.9375rem;
+  border: 3px solid #000;
+  background: #555;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  direction: ltr;
+  float: right;
+  position: relative;
+  right: 4rem;
+  transition: background-color 0.3s ease; /* Add transition for background color */
+}
+
+.contactme p {
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0; /* Remove default margin */
+  line-height: 2.25rem;
+  font-weight: 700;
+  transition: color 0.3s ease; /* Add transition for text color */
+}
+
+.contactme:hover {
+  background-color: rgb(228, 255, 196); /* Change background color on hover */
+}
+
+.contactme:hover p {
+  color: #4f4d4d; /* Change text color on hover */
+}
+
+.container {
+  display: flex;
+}
+
+.section {
+  width: 15rem;
+  height: 100vh;
+  background-color: #1c1b23;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  position: fixed;
+  margin-top: 3rem; /* Adjust margin-top to match the height of the navbar */
+}
+
+.info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 15rem;
+  padding-top: 3rem; /* Add padding-top to avoid content under the fixed navbar */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.profile {
+  width: 100%;
+  height: 10rem;
+  background-color: rgb(6, 224, 148);
+  background-image: url(image/profile_background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 0.7rem;
+  left: 1rem;
+  /* backdrop-filter: blur(18px); */
+}
+
+.blur-overlay {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(18px);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.circle {
+  width: 7.5rem;
+  position: relative;
+  height: 7.5rem;
+  background-color: rgb(227, 255, 127);
+  border: 3px solid rgb(248, 248, 248);
+  border-radius: 50%;
+  top: 15px;
+  right: -3rem;
+  background-image: url(image/Rik.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 39px 1.5px gold;
+}
+.funname {
+  display: flex;
+}
+.name {
+  width: 27rem;
+  height: 2rem;
+  position: relative;
+  top: 3rem;
+  left: 4rem;
+}
+.name p {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.info-items-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: relative;
+  bottom: -4.24rem;
+}
+
+.info1,
+.info2,
+.info3,
+.info4 {
+  width: 22%;
+  height: 13rem;
+  background-color: rgba(155, 150, 150, 0.419);
+  border-radius: 12px;
+}
+
+.info1::after,
+.info2::after,
+.info3::after,
+.info4::after {
+  position: absolute;
+  content: "";
+  color: #fff;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.info1:hover::after,
+.info2:hover::after,
+.info3:hover::after,
+.info4:hover::after {
+  content: "Coming Soon";
+  opacity: 1; /* Show on hover */
+}
+
+.knowladge {
+  display: flex;
+  justify-content: space-between;
+  width: 73%;
+  position: relative;
+  bottom: -7.24rem;
+  right: 8rem;
+}
+
+.k1,
+.k2,
+.k3 {
+  width: 29%;
+  height: 23rem;
+  background-color: #1c1b23;
+  border-radius: 12px;
+}
+.k4 {
+  border-radius: 12px;
+  width: 22%;
+  height: 26rem;
+  background-color: #1c1b23;
+  position: relative;
+  left: 28rem;
+  bottom: 17rem;
+}
+
+a.flex {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* margin-top: 2rem; */
+  text-decoration: none;
+  color: #8b8a91;
+  font-family: Inter;
+  font-size: 15px;
+  transition: transform 0.5s ease-in-out;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  left: 1.3rem;
+}
+a.flex svg {
+  margin-right: 15px; /* Adjust the margin as needed */
+}
+
+a.flex:hover {
+  transform: scale(1.1);
+}
+
+.facebook {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1.4rem;
+  margin-top: 0.8rem;
+  transition: transform 0.5s ease-in-out;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.facebook:hover {
+  transform: scale(1.1);
+}
+
+.facebooklogo {
+  height: 24px;
+  width: 24px;
+  background-image: url(image/facebook.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Resume_logo {
+  height: 24px;
+  width: 24px;
+  background-image: url(image/curriculum-vitae.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Resume {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1.4rem;
+  margin-top: 0.8rem;
+  transition: transform 0.5s ease-in-out;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.Resume:hover {
+  transform: scale(1.1);
+}
+
+.About {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1.4rem;
+  margin-top: 0.8rem;
+  transition: transform 0.5s ease-in-out;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.About:hover {
+  transform: scale(1.1);
+}
+
+.aboutlogo {
+  height: 24px;
+  width: 24px;
+  background-image: url(image/profile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: contrast(0.7);
+}
+.About p {
+  text-decoration: none;
+  color: #8b8a91;
+  font-family: Inter;
+  font-size: 15px;
+  margin-left: 0.7rem;
+}
+
+.facebook p {
+  text-decoration: none;
+  color: #8b8a91;
+  font-family: Inter;
+  font-size: 15px;
+  margin-left: 0.7rem;
+}
+.Resume p {
+  text-decoration: none;
+  color: #8b8a91;
+  font-family: Inter;
+  font-size: 15px;
+  margin-left: 0.7rem;
+}
+.social p {
+  color: #8b8a91;
+  font-family: Inter;
+  font-size: 15px;
+  line-height: 2.25rem;
+  font-weight: 700;
+  position: relative;
+  left: 1rem;
+}
+
+.aboutme {
+  width: 80%;
+  height: 36rem;
+  background-color: rgb(64, 71, 98);
+  display: flex;
+  position: relative;
+  left: 16rem;
+  top: -14rem;
+  color: white;
+  border: 4px solid white;
+  border-radius: 18px;
+
+  box-shadow: 0px 0px 24px 1px gold;
+}
+.photocopy {
+  width: 70rem;
+  height: 100%;
+  background-color: wheat;
+  background-image: url(image/Rik_profile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+}
+
+.text {
+  width: 76%;
+  height: 13rem;
+  position: relative;
+  top: 3rem;
+  left: 2rem;
+}
+.text p {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: white;
+
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.mycontent {
+  position: relative;
+  /* background-color: aquamarine; */
+  width: 80%; /* Adjust the width as needed */
+  margin: 2rem; /* Center the content */
+}
+
+.about-info {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: white;
+}
+ul {
+  list-style: none;
+}
+
+.about-info {
+  list-style: none;
+  padding: 0;
+}
+
+li.d-flex {
+  display: flex;
+  /* justify-content: space-evenly; */
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+li.d-flex span {
+  /* flex: 1; This ensures equal space between spans */
+  /* margin-left: 3rem; */
+}
+.sid {
+  margin-left: 5.5rem;
+}
+.may {
+  margin-left: 3rem;
+}
+.mail {
+  margin-left: 5.7rem;
+}
+.call {
+  margin-left: 5rem;
+}
+.code {
+  margin-left: 4.5rem;
+}
+.add {
+  margin-left: 4.7rem;
+}
+
+.m1 {
+  width: 24px;
+  height: 24px;
+  background-image: url(image/brain.png);
+  background-size: cover;
+  position: relative;
+  left: 2rem;
+  top: 0.6rem;
+}
+.moreProject1 {
+  display: flex;
+}
+.m1name {
+  position: relative;
+  left: 2.8rem;
+  bottom: 0.9rem;
+  color: #8b8a91;
+  font-size: 1.2rem;
+}
+.m1name p {
+  font-size: 0.6rem;
+  position: relative;
+  bottom: 1.1rem;
+}
+@media screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactme {
+    float: right;
+    position: static;
+    right: auto;
+  }
+}
+
+body {
+  background-color: rgb(6, 4, 25);
+  overflow-x: hidden;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* ... (existing styles) ... */
+
+@media screen and (max-width: 780px) {
+  /* Adjustments for smaller screens */
+  .navbar {
+    height: 4rem; /* Increase height for better touch interaction */
+  }
+
+  .contactme {
+    width: 100%;
+    float: none;
+    right: 0;
+    margin-top: 1rem; /* Adjust margin-top for spacing */
+    visibility: hidden;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .section {
+    margin-top: 4rem; /* Adjust margin-top to provide space for the navbar */
+  }
+
+  .info {
+    margin-left: 0;
+    padding-top: 1rem;
+  }
+
+  .name {
+    left: 0;
+  }
+
+  .knowladge {
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .k4 {
+    left: 0;
+    bottom: 0;
+  }
+
+  .info-items-container {
+    flex-direction: column; /* Change flex direction to column for smaller screens */
+    align-items: center; /* Center the items */
+  }
+
+  .info1,
+  .info2,
+  .info3,
+  .info4 {
+    width: 90%; /* Adjust the width as needed */
+    margin-bottom: 1rem; /* Add margin between the items */
+  }
+
+  /* Add styles to create two rows */
+  .info1,
+  .info2 {
+    margin-bottom: 0.5rem; /* Adjust margin between the items in the same row */
+  }
+  .knowladge {
+    flex-direction: column; /* Change flex direction to column for smaller screens */
+    align-items: center; /* Center the items */
+  }
+  .k1,
+  .k2,
+  .k3,
+  .k4 {
+    width: 90%; /* Adjust the width as needed */
+    margin-bottom: 1rem;
+    height: 12rem;
+  }
+  .k1 {
+    margin-top: 4.4rem;
+  }
+  .k4 {
+    height: 20rem;
+  }
+  .aboutme {
+    top: 2rem;
+    left: 3rem;
+    width: 88%;
+    height: 24rem;
+  }
+  .photocopy {
+    width: 54rem;
+  }
+  .text {
+    top: 0rem;
+  }
+  .text p {
+    font-size: small;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Adjust the number of lines you want to display */
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+  .about-info {
+    font-size: small;
+  }
+  .mycontent {
+    left: 2rem;
+    bottom: 9rem;
+  }
+  .name p {
+    margin-left: 4.56rem;
+  }
+  .profile {
+    top: 2.9rem;
+  }
+}
+
+/* ... (existing styles) ... */
