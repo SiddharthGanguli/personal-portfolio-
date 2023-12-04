@@ -1,8 +1,18 @@
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: rgb(6, 4, 25);
   overflow-x: hidden;
   margin: 0; /* Remove default margin */
   font-family: "Inter", sans-serif; /* Add font family */
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
