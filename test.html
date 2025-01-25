@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Fixed Navbar with Scrollable Content</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="tstyle.css" />
+  </head>
+  
+<body>
+
+  <div class="layout">
+    <!-- Fixed Navbar -->
+    <div class="navbar" id="navbar">
+      <!-- Navigation Links -->
+      <ul class="navbar-links">
+        <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#about"><i class="fa fa-user"></i> About</a></li>
+      </ul>
+
+      <!-- Socials Section -->
+      <div class="social-heading">Socials</div>
+      <ul class="navbar-links">
+        <li><a href="https://github.com/SiddharthGanguli"><i class="fa-brands fa-github"></i> GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/siddhartha-ganguli-bbb63a294/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/rik.18ganguli/"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.facebook.com/siddharth.ganguly.127"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+        <li><a href="#resume"><i class="fa fa-file"></i> Resume</a></li>
+      </ul>
+    </div>
+
+    <!-- Scrollable Main Content -->
+    <div class="main-content">
+      
+      <!-- 1st Section: Profile Section -->
+      <section id="home" class="profile-section">
+        <div class="profile-pic">
+        </div>
+        <div class="profile-info">
+          <h2>Siddhartha Ganguli</h2>
+          <p>A short bio about you goes here.</p>
+        </div>
+      </section>
+
+      <h2>Projects</h2>
+      <!-- 2nd Section: Projects Section -->
+      <section class="projects-section">
+        <div class="project-card">
+          <h3>Project 1</h3>
+          <p>Description of project 1.</p>
+        </div>
+        <div class="project-card">
+          <h3>Project 2</h3>
+          <p>Description of project 2.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 3</h3>
+            <p>Description of project 3.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 4</h3>
+            <p>Description of project 4.</p>
+        </div>
+      </section>
+
+      <h2>What I Know</h2>
+      <section class="project-section2">
+        <div class="skill-category">
+          <h3>Programming Languages</h3>
+          <div class="skills">
+            <span style="border: 1px solid rgb(80, 154, 162); border-radius: 23px;">Python (Proficient)</span>
+            <span>C (embedded system programming)</span>
+            <span style="border: 1px solid rgb(232, 133, 72); border-radius: 23px;">Java (Proficient)</span>
+            <span style="border: 1px solid #7A82AB; border-radius: 23px;">C++ (embedded system programming)</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>AI/ML Frameworks</h3>
+          <div class="skills">
+            <span style="border: 1px solid rgb(144, 85, 156); border-radius: 23px;">TensorFlow</span>
+            <span>PyTorch</span>
+            <span style="border: 1px solid rgb(80, 154, 162); border-radius: 23px;">Scikit-learn</span>
+            <span>OpenCV</span>
+            <span>TensorFlow Lite</span>
+            <span style="border: 1px solid rgb(102, 125, 46); border-radius: 23px;">Theano</span>
+            <span>ONNX</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Microcontroller Programming</h3>
+          <div class="skills">
+            <span style="border: 1px solid #AB92A1; border-radius: 23px;">Arduino</span>
+            <span>Esp32</span>
+            <span>Raspberry Pi</span>
+            <span style="border: 1px solid #AB92A1; border-radius: 23px;">STM32</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Embedded Systems & Cloud Infrastructure for AI</h3>
+          <div class="skills">
+            <span style="border: 1px solid rgb(176, 95, 95); border-radius: 23px;">FreeRTOS</span>
+            <span>Google Cloud AI</span>
+            <span style="border: 1px solid rgb(167, 176, 95); border-radius: 23px;">GIT</span>
+            <span>Azure ML</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3rd Section: Varying Height Section -->
+      <section class="varying-height-section">
+        <div class="small-div">
+          <h3>Small Div 1</h3>
+        </div>
+        <div class="large-div">
+          <h3>Large Div 1</h3>
+        </div>
+        <div class="small-div2">
+          <h3>Mini-Projects</h3>
+          <div class="project-list">
+            <a href="https://siddharthganguli.github.io/Smart-Expense-Tracker/"><span style="border: 1px solid #b05f5f; border-radius: 23px;">Smart-Expense-Tracker</span></a>
+            <span style="border: 1px solid #a7b05f; border-radius: 23px;">Project B</span>
+            <span style="border: 1px solid #95b0b0; border-radius: 23px;">Project C</span>
+            <span style="border: 1px solid #b095b0; border-radius: 23px;">Project D</span>
+          </div>
+        </div>
+        
+        
+      </section>
+
+      <!-- 4th Section: About Me Section -->
+      <section class="about-me-section" id="about">
+        <div class="about-section">
+          <!-- Profile Photo Section -->
+          <div class="profile-photo">
+            <img src="image/WhatsApp Image 2025-01-25 at 15.45.05.jpg" alt="">
+          </div>
+
+          <!-- About Text Section -->
+          <div class="about-text">
+            <h3>About</h3>
+            <p>
+              Welcome to my digital haven! I'm Siddhartha Ganguli, Third-Year AI/ML Engineering Student at Dr. B.C. Roy Engineering College | Passionate About Embedded Machine Learning, Deep Learning, and AI | Proficient in Python, C, C++,Java | Currently Learning Deep Learning and AI Algorithms | Skilled in AI/ML Frameworks (TensorFlow, PyTorch) | Exploring AI in IoT and TinyML | Eager to Apply and Expand My Skills in AI, ML, and DL | Looking to Apply Knowledge and Engage in Innovative Projects
+            </p>
+            <div class="personal-details">
+              <p><span>Name:</span> Siddhartha Ganguli</p>
+              <p><span>Date of Birth:</span> May 05, 2004</p>
+              <p><span>Address:</span> Baricha, Simlapal, Bankura, West Bengal</p>
+              <p><span>Zip Code:</span> 722151</p>
+              <p><span>Email:</span> siddharthaganguli0093@gmail.com</p>
+              <p><span>Phone:</span> +91 8509004124</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Hamburger Menu Button -->
+  <div class="hamburger" id="hamburger">
+    <i class="fa fa-bars"></i>
+  </div>
+
+  <script>
+const hamburger = document.getElementById('hamburger');
+const navbar = document.getElementById('navbar');
+
+// Toggle the navbar on hamburger click
+hamburger.addEventListener('click', () => {
+  navbar.classList.toggle('open');
+});
+
+// Add smooth scrolling only for internal links
+document.querySelectorAll('.navbar-links a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+
+    // Check if it's an internal link (starts with "#")
+    if (href.startsWith('#')) {
+      e.preventDefault(); // Prevent default for internal links
+      document.querySelector(href).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+    // For external links, do nothing (default behavior will work)
+  });
+});
+
+
+  </script>
+
+</body>
+</html>
