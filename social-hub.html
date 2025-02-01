@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Hub</title>
+    <link rel="stylesheet" href="social-hub.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Social Hub</h1>
+        </header>
+
+        <section id="social-feed" class="feed-container">
+            <h3>Latest Posts</h3>
+            <div id="post-container" class="post-container"></div>
+        </section>
+
+        <div class="dashboard-link">
+            <button id="goToDashboardBtn">Go to Dashboard</button>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js';
+        import { getFirestore, collection, getDocs, orderBy, query } from 'https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js';
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyAFcKo9yeY8_XdHG13tx6FS_9l4RKrFkFo",
+            authDomain: "personal-portfolio-902d8.firebaseapp.com",
+            projectId: "personal-portfolio-902d8",
+            storageBucket: "personal-portfolio-902d8.firebasestorage.app",
+            messagingSenderId: "1026899552063",
+            appId: "1:1026899552063:web:a6baa5eef4e03a476c158a",
+            measurementId: "G-RYL5DNY3C6"
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function fetchPosts() {
+            try {
+                const q = query(collection(db, "social_content"), orderBy("timestamp", "desc"));
+                const querySnapshot = await getDocs(q);
+        
+                const postContainer = document.getElementById('post-container');
+                postContainer.innerHTML = ""; 
+        
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const postElement = document.createElement('div');
+                    postElement.classList.add('post');
+        
+                    postElement.innerHTML = `
+                        <div class="post-header">
+                            <h4>${data.title}</h4>
+                            <span class="timestamp">${new Date(data.timestamp.seconds * 1000).toLocaleString()}</span>
+                        </div>
+                        <div class="post-body">
+                            <img src="${data.imageUrl}" alt="Uploaded Image" class="post-image" />
+                        </div>
+                    `;
+                    postContainer.appendChild(postElement);
+                });
+            } catch (e) {
+                console.error("Error fetching posts: ", e);
+            }
+        }
+
+        // Function to handle password verification before redirecting to the Dashboard
+        function redirectToDashboard() {
+            const password = prompt("Enter password to access the Dashboard:");
+            if (password === "rajrik0916s") {
+                window.location.href = "dashboard.html"; // Redirect to the dashboard page
+            } else {
+                alert("Incorrect password. Access denied.");
+            }
+        }
+
+        // Adding the event listener to the "Go to Dashboard" button
+        document.getElementById("goToDashboardBtn").addEventListener("click", redirectToDashboard);
+
+        window.onload = fetchPosts;
+    </script>
+</body>
+</html>

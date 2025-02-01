@@ -11,71 +11,67 @@
         display: flex;
         overflow-x: hidden;
       }
-  
-/* Scrollbar for all scrollable areas (like main content) */
-/* Hide scrollbar for the entire document */
-/* Custom Scrollbar for the Main Content */
+
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #65456e, #5a5a5a); /* Gradient thumb */
+  background: linear-gradient(45deg, #65456e, #5a5a5a); 
   border-radius: 10px;
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #473a65; /* Darker blue on hover */
+  background-color: #473a65; 
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgb(6, 4, 25); /* Darker background for track */
+  background-color: rgb(6, 4, 25); 
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-button {
-  display: none; /* Optional: Hide scroll buttons */
+  display: none; 
 }
 
 
-      /* Layout Styles */
       .layout {
         display: flex;
         width: 100%;
         position: relative;
       }
   
-      /* Fixed Navbar */
+
       .navbar {
         width: 250px;
-        height: 100vh; /* Full viewport height */
+        height: 100vh; 
         background-color: #1c1b23;
         border: 1px solid rgb(0, 0, 0);
         border-radius: 0.5rem;
-        position: fixed; /* Fix the navbar to the left */
+        position: fixed; 
         top: 24px;
         left: 0;
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Align content to the left */
+        align-items: flex-start; 
         padding: 30px 20px;
         box-sizing: border-box;
-        z-index: 10; /* Ensure it stays above other elements */
-        transform: translateX(0); /* Initially visible */
+        z-index: 10; 
+        transform: translateX(0); 
         transition: transform 0.3s ease;
       }
   
-      /* Navbar Links */
+
       .navbar-links {
         list-style: none;
         padding: 0;
-        margin: 30px 0 0; /* Add top margin to separate from logo */
+        margin: 30px 0 0; 
         width: 100%;
       }
   
       .navbar-links li {
-        margin-bottom: 25px; /* Add spacing between each item */
+        margin-bottom: 25px; 
         width: 100%;
       }
   
@@ -85,7 +81,7 @@
         font-size: 18px;
         display: flex;
         align-items: center;
-        gap: 15px; /* Space between icon and text */
+        gap: 15px; 
         padding: 10px 0;
         transition: 0.3s;
       }
@@ -97,29 +93,24 @@
       .navbar-links a:hover {
         color: #fff;
       }
-  
-      /* Socials Section */
       .navbar .social-heading {
-        margin-top: 40px; /* Add spacing above socials heading */
+        margin-top: 40px; 
         color: #ccc;
         font-size: 14px;
         text-transform: uppercase;
         letter-spacing: 1px;
       }
-  
-      /* Main Content */
       .main-content {
-        margin-left: 250px; /* Leave space for the navbar */
+        margin-left: 250px; 
         padding: 20px;
-        width: calc(100% - 250px); /* Adjust width */
-        overflow-y: auto; /* Allow scrolling */
+        width: calc(100% - 250px); 
+        overflow-y: auto; 
         background-color: rgb(6, 4, 25);
-        height: 100vh; /* Full height for scrollable area */
+        height: 100vh; 
         box-sizing: border-box;
-        transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition when navbar shows or hides */
+        transition: margin-left 0.3s ease, width 0.3s ease; 
       }
   
-      /* 1st Section: Profile Section */
 /* 1st Section: Profile Section */
 .profile-section {
   display: flex;
@@ -141,10 +132,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: inherit; /* Reuse the background image */
+  background-image: inherit;
   background-size: inherit;
   background-position: inherit;
-  filter: blur(8px); /* Adjust blur intensity */
+  filter: blur(8px); 
   z-index: 1;
 }
 
@@ -167,7 +158,7 @@
 }
 
       .profile-pic img::after {
-        content: none; /* Prevents any additional text */
+        content: none; 
       }
   
       .profile-section .profile-pic {
@@ -341,10 +332,8 @@
         }
   
         .navbar {
-          transform: translateX(-100%); /* Hide navbar by default on small screens */
+          transform: translateX(-100%); 
         }
-  
-        /* Show the navbar when toggled */
         .navbar.open {
           transform: translateX(0);
         }
@@ -361,14 +350,12 @@
         }
   
         .main-content {
-          margin-left: 0; /* No margin left on small screens */
-          width: 100%; /* Take up full width */
+          margin-left: 0;
+          width: 100%; 
         }
   
       }
-  /* Mobile styles */
   @media (max-width: 500px) {
-    /* Profile Section */
     .profile-section {
       flex-direction: column;
       align-items: flex-start;
@@ -378,28 +365,28 @@
       font-size: 24px;
     }
   
-    /* Projects Section - Show 1 item per line on smaller screens */
+
     .projects-section {
-      grid-template-columns: 1fr; /* 1 column, each item takes a full line */
+      grid-template-columns: 1fr; 
     }
     .projects-section2 {
-      grid-template-columns: 1fr; /* 1 column, each item takes a full line */
+      grid-template-columns: 1fr; 
     }
-    /* Varying Height Section - Show 1 item per line on smaller screens */
+
     .varying-height-section {
-      grid-template-columns: 1fr; /* 1 column, each item takes a full line */
+      grid-template-columns: 1fr; 
     }
   
     .about-me-section {
       padding: 20px;
     }
   
-    /* Navbar Behavior */
+
     .navbar {
-      transform: translateX(-100%); /* Hide navbar by default on small screens */
+      transform: translateX(-100%);
     }
   
-    /* Show the navbar when toggled */
+
     .navbar.open {
       transform: translateX(0);
     }
@@ -415,17 +402,17 @@
       z-index: 20;
     }
   
-    /* Main Content */
+
     .main-content {
-      margin-left: 0; /* No margin left on small screens */
-      width: 100%; /* Take up full width */
+      margin-left: 0; 
+      width: 100%;
     }
   }
   
   
-  /* iPad Pro styles - between 500px and 1024px */
+
   @media (max-width: 1230px) and (min-width: 765px) {
-    /* Projects Section - Show 2 items per line on tablet-sized screens */
+
     .projects-section {
       grid-template-columns: repeat(2, 1fr); /* 2 columns, each item takes up half the width */
     }
@@ -434,20 +421,18 @@
     }
   
   
-    /* Varying Height Section - Keep it as 2x1 for tablet screens */
+
     .varying-height-section {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns, each item takes up half the width */
+      grid-template-columns: repeat(2, 1fr);
     }
   
-    /* Navbar still visible */
+
     .navbar {
-      transform: translateX(0); /* Keep the navbar visible */
+      transform: translateX(0); 
     }
-  
-    /* Main Content */
     .main-content {
-      margin-left: 250px; /* Keep space for the navbar */
-      width: calc(100% - 250px); /* Adjust width */
+      margin-left: 250px;
+      width: calc(100% - 250px);
     }
   }
   

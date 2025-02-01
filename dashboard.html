@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Upload Image to ImageKit</h1>
+        </header>
+
+        <section class="upload-form">
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="title">Post Title:</label>
+                    <input type="text" id="title" name="title" required placeholder="Enter a title for your post" />
+                </div>
+
+                <div class="form-group">
+                    <label for="file">Upload Image:</label>
+                    <input type="file" id="file" name="file" accept="image/*" required />
+                </div>
+
+                <button type="submit" class="submit-btn">Upload Image</button>
+            </form>
+
+            <div id="upload-status" class="status-message"></div>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const file = document.getElementById("file").files[0];
+            const title = document.getElementById("title").value;
+            const uploadStatus = document.getElementById("upload-status");
+
+            if (!file) {
+                alert("Please select an image to upload.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("file", file);
+            formData.append("title", title);
+
+            try {
+                const response = await fetch("http://localhost:5000/upload", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const result = await response.json();
+                uploadStatus.innerHTML = `<p>${result.message}</p>`;
+
+                if (result.url) {
+                    console.log("Image URL:", result.url);
+                }
+            } catch (error) {
+                console.error("Upload Error:", error);
+                uploadStatus.innerHTML = `<p style="color: red;">Upload failed.</p>`;
+            }
+        });
+    </script>
+</body>
+</html>

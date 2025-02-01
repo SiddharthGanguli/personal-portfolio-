@@ -1,0 +1,105 @@
+/* Reset and basic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background-color: #4CAF50;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+/* Social Feed */
+#social-feed {
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.post-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.post {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-10px);
+}
+
+.post-header {
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+
+.post-header h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.timestamp {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.post-body {
+  padding: 15px;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .post-container {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-container {
+      grid-template-columns: 1fr;
+  }
+}

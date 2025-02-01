@@ -11,7 +11,6 @@
 <body>
 
   <div class="layout">
-    <!-- Fixed Navbar -->
     <div class="navbar" id="navbar">
       <!-- Navigation Links -->
       <ul class="navbar-links">
@@ -27,6 +26,11 @@
         <li><a href="https://www.instagram.com/rik.18ganguli/"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
         <li><a href="https://www.facebook.com/siddharth.ganguly.127"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
         <li><a href="#resume"><i class="fa fa-file"></i> Resume</a></li>
+      </ul>
+      <!-- New Social Hub Section in Navbar -->
+      <div class="social-heading">My Social Hub</div>
+      <ul class="navbar-links">
+        <li><a href="social-hub.html" target="_blank"><i class="fa-solid fa-blog"></i> Social Hub</a></li>
       </ul>
     </div>
 
@@ -170,19 +174,19 @@ hamburger.addEventListener('click', () => {
   navbar.classList.toggle('open');
 });
 
-// Add smooth scrolling only for internal links
+
 document.querySelectorAll('.navbar-links a').forEach(link => {
   link.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
 
-    // Check if it's an internal link (starts with "#")
+
     if (href.startsWith('#')) {
-      e.preventDefault(); // Prevent default for internal links
+      e.preventDefault(); 
       document.querySelector(href).scrollIntoView({
         behavior: 'smooth'
       });
     }
-    // For external links, do nothing (default behavior will work)
+
   });
 });
 
